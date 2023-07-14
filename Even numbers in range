@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() 
+{
+    int n,i,l,r,t;
+    printf("No of Test Case : ");
+    scanf("%d",&t);
+    printf("Array Size : ");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter %d Array Elements : ",n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    while(t>0)
+    {
+    int count=0;
+    printf("\nEnter Range Start , End : ");
+    scanf("%d %d",&l,&r);
+    if(l>=n || r>=n)
+    {
+        printf("Array Range Exceeded");
+        goto end;
+    }
+    if(l==r && (l+1)%2==0)
+    {
+        printf("1");
+        goto end;
+    }
+    else
+    {
+        for(i=l;i<=r;i++)
+    {
+        if(a[i]%2==0)
+        count++;
+    }
+    }
+    printf("%d",count);
+    end:
+    t--;
+    }
+    
+
+}
